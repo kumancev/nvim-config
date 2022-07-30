@@ -1,0 +1,41 @@
+:set number
+:set autoindent
+:set tabstop=4
+:set shiftwidth=4
+:set smarttab
+:set softtabstop=4
+:set mouse=a
+
+
+call plug#begin()
+
+  Plug 'folke/tokyonight.nvim'  "Theme  
+  Plug 'vim-airline/vim-airline'  "statusline
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'ap/vim-css-color'  "CSS color prewiev                       
+  Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
+
+  Plug 'https://github.com/neoclide/coc.nvim'  "Auto Completion
+  Plug 'tpope/vim-fugitive'  "git integration                       
+  Plug 'preservim/nerdcommenter' "comment
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
+
+  Plug 'preservim/tagbar'  "Code map sidebar
+  Plug 'preservim/nerdtree' |
+                \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+                \ Plug 'ryanoasis/vim-devicons'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'jiangmiao/auto-pairs' "this will auto close ( [ {
+  Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+  " these two plugins will add highlighting and indenting to JSX and TSX files.
+  Plug 'yuezk/vim-js'
+  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'tomlion/vim-solidity'
+
+call plug#end()
+
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+
+nmap <silent> <C-l> <Plug>(coc-coc-solidity-keymap)
+colorscheme tokyonight
